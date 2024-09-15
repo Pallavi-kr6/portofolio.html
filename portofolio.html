@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        .typing-container {
+            font-size: 24px;
+            color: #090909;
+            border-right: 3px solid #333;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0; 
+            animation: typing 4s steps(30, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: #333; }
+        }
+        header {
+            width: 100%;
+            padding: 10px;
+            background: #333;
+            color: white;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 20px;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="typing-container" id="typing-text"></div>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>Welcome to my portfolio website.learn more about me.</p>
+        <p>I am a first-year student at SRM KTR.</p>
+        <p>Networking and Communication Department</p>
+        <p>CS with IT Branch</p>
+        <p>This is the first webpage I have tried to make.</p>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2>My Work</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <img src="C:\Users\PALLAVI KUMARI\OneDrive\Pictures\Screenshots\Screenshot 2024-09-15 123548.png" alt="Description of the image">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <p>You can reach me at <a href="mailto:pk2239@srmist.edu.in">pk2239@srmist.edu.in</a></p>
+        <p>my github profile link is <a href= "https://github.com/Pallavi-kr6">https://github.com/Pallavi-kr6</a> </p> 
+        <p>my linkedin profile link is <a herf= "www.linkedin.com/in/pallavi-kumari-43b939319">www.linkedin.com/in/pallavi-kumari-43b939319</a> </p>
+    </section>
+
+    <script>
+        // Define the text to be typed
+        const text = "Hello, welcome to my porotofolio!";
+
+        // Get the element where the text will be displayed
+        const typingElement = document.getElementById('typing-text');
+
+        let index = 0;
+
+        function type() {
+            if (index < text.length) {
+                typingElement.textContent += text[index];
+                index++;
+                setTimeout(type, 50); 
+            }
+        }
+
+
+        type();
+    </script>
+</body>
+</html>
